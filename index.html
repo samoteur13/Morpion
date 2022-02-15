@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../morpion/morpion.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <h1>Morpion <span class="red">R</span><span class="blue">I</span><span>7</span></h1>
+      <aside></aside>
+    </header>
+    <hr />
+    <main>
+      <div></div>
+      <!--  <img src="../morpion/img/piece.png" alt=""> -->
+      <section>
+        <h2 id="test">Grille</h2>
+        <article>
+          <div id="form">
+            <form>
+              <label for="pseudo">entré votre nom :</label>
+              <input id="pseudo" type="text" />
+              <div id="formBis">
+                <label for="pseudo2">entré votre nom joueur 2</label>
+                <input id="pseudo2" type="text" />
+              </div>
+
+              <div>
+                <label for="joueur">avec quoi jouer vous ?</label>
+                <select name="joueur" id="joueur">
+                  <option value="joueur2">joueur2</option>
+                  <option value="cpu">cpu</option>
+                </select>
+              </div>
+              <input type="button" onclick="choice()" value="entrez" />
+            </form>
+          </div>
+          <img id="img" src="../morpion/img/bonjour.png" alt="bonjour" />
+          <table id="Grille">
+            <tr>
+              <!--  (this = seulement l'endroit visé)-->
+              <td><button onclick="clickGame(this)"></button></td>
+              <td><button onclick="clickGame(this)"></button></td>
+              <td><button onclick="clickGame(this)"></button></td>
+            </tr>
+            <tr>
+              <td><button onclick="clickGame(this)"></button></td>
+              <td><button onclick="clickGame(this)"></button></td>
+              <td><button onclick="clickGame(this)"></button></td>
+            </tr>
+            <tr>
+              <td><button onclick="clickGame(this)"></button></td>
+              <td><button onclick="clickGame(this)"></button></td>
+              <td><button onclick="clickGame(this)"></button></td>
+            </tr>
+          </table>
+        </article>
+        <article id="score">
+          <p class="blue">
+            score de <span id="player1Name">joueur <span class="blue">1</span></span> :
+            <span id="jouer1"></span>
+          </p>
+          <p class="red">
+            score de <span id="player2Name">joueur <span class="red">2</span></span> :
+            <span id="jouer2"></span>
+          </p>
+          <button id="rest" onclick="restart(this)">reset</button>
+        </article>
+        <div id="music"></div>
+      </section>
+    </main>
+    <script src="../morpion/morpion.js"></script>
+  </body>
+</html>
