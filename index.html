@@ -28,14 +28,14 @@
           <div id="form">
             <form>
               <label for="pseudo">entré votre nom :</label>
-              <input id="pseudo" type="text" />
+              <input id="pseudo" type="text" required/>
               <div id="formBis">
                 <label for="pseudo2">entré votre nom joueur 2</label>
-                <input id="pseudo2" type="text" />
+                <input id="pseudo2" type="text" required />
               </div>
 
               <div>
-                <label for="joueur">avec quoi jouer vous ?</label>
+                <label for="joueur">avec qui jouer vous ?</label>
                 <select name="joueur" id="joueur">
                   <option value="joueur2">joueur2</option>
                   <option value="cpu">cpu</option>
@@ -73,7 +73,7 @@
             score de <span id="player2Name">joueur <span class="red">2</span></span> :
             <span id="jouer2"></span>
           </p>
-          <button id="rest" onclick="restart(this)">reset</button>
+          <button id="reset" onclick="restart(this)" disabled>reset</button>
         </article>
         <div id="music"></div>
       </section>
