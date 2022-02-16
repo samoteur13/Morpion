@@ -11,7 +11,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" sizes="16x16" href="https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/IMG_%28business%29.svg/1200px-IMG_%28business%29.svg.png">
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/IMG_%28business%29.svg/1200px-IMG_%28business%29.svg.png"
+    />
     <title>Morpion</title>
   </head>
   <body>
@@ -27,14 +32,14 @@
           <div id="form">
             <form>
               <label for="pseudo">entré votre nom :</label>
-              <input id="pseudo" type="text" />
+              <input id="pseudo" type="text" required />
               <div id="formBis">
                 <label for="pseudo2">entré votre nom joueur 2</label>
-                <input id="pseudo2" type="text" />
+                <input id="pseudo2" type="text" required />
               </div>
 
               <div>
-                <label for="joueur">avec quoi jouer vous ?</label>
+                <label for="joueur">avec qui jouer vous ?</label>
                 <select name="joueur" id="joueur">
                   <option value="joueur2">joueur2</option>
                   <option value="cpu">cpu</option>
@@ -72,7 +77,7 @@
             score de <span id="player2Name">joueur <span class="red">2</span></span> :
             <span id="jouer2"></span>
           </p>
-          <button id="reset" onclick="restart(this)" disabled >reset</button>
+          <button id="reset" onclick="restart(this)" disabled>reset</button>
         </article>
         <div id="music"></div>
       </section>
