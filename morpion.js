@@ -66,15 +66,13 @@ function clickGame(element) {
         if (gamer === "gamer 1") {
             element.style.color = "blue";
             player = "X"
+            element.innerHTML = player
             if (choiceValue === "joueur2") {
                 test.innerHTML = pseudo2.value;
             } else {
                 test.innerHTML = pseudo.value;
-            }
-            victoiryif()
-
+            }       
             gamer = "gamer 2"
-
             if (!checkWin) {
                 if (choiceValue === "cpu" && gamer === "gamer 2") {
                     //desactive la grille le temps que le joueur cpu joue son coup
@@ -96,14 +94,14 @@ function clickGame(element) {
         } else if (gamer === "gamer 2") {
             element.style.color = "red";
             player = "O"
+            element.innerHTML = player
             test.innerHTML = pseudo.value;
             gamer = "gamer 1"
             victoiryif()
         }
+        element.innerHTML = player
+
     }
-
-    element.innerHTML = player
-
 }
 
 //ia
@@ -175,12 +173,14 @@ function victoiryif() {
 
 
 }
+
 //stop le jeux
 function stop() {
     for (let i = 0; i < grille.length; i++) {
         grille[i].disabled = true;
     }
 }
+
 //reset toute la grille
 function restart() {
     checkWin = false
@@ -192,6 +192,8 @@ function restart() {
         gamer = "gamer 1"
     }
 }
+
+//matche nul
 function matchnul() {
     var reply = 0;
     for (let i = 0; i < grille.length; i++) {
@@ -199,7 +201,9 @@ function matchnul() {
             reply++
         }
     }
+    console.log(reply)
     if (reply === 9) {
+        console.log("testcondition")
         test.innerHTML = "Egalité"
         gamer = "gamer 1"
         for (let i = 0; i < grille.length; i++) {
@@ -209,6 +213,8 @@ function matchnul() {
     }
 
 }
+
+//nombre aleatoire
 function Aleatoire(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
