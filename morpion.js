@@ -21,6 +21,7 @@ var pseudo2 = document.querySelector('#pseudo2')
 //var choice = document.querySelector('#cpu').value
 
 //var
+let checkWin = false
 var jouer1scor = 0;
 var jouer2scor = 0;
 var gamer = "gamer 1"
@@ -70,22 +71,26 @@ function clickGame(element) {
             } else {
                 test.innerHTML = pseudo.value;
             }
-            
+            victoiryif()
+
             gamer = "gamer 2"
 
-            if (choiceValue === "cpu" && gamer === "gamer 2") {
-                //desactive la grille le temps que le joueur cpu joue son coup
-                for (let i = 0; i < grille.length; i++) {
-                    grille[i].disabled = true
+            if (!checkWin) {
+                if (choiceValue === "cpu" && gamer === "gamer 2") {
+                    //desactive la grille le temps que le joueur cpu joue son coup
+                    for (let i = 0; i < grille.length; i++) {
+                        grille[i].disabled = true
+                    }
+                    test.innerHTML = pseudo2.value;
+                    {
+                        setTimeout(() => {// appelle ma fonction avec un delai de 1sec  
+                            ia()
+                            gamer = "gamer 1"
+                            victoiryif()
+                        }, 1000); // delai toujours en milliseconde
+                    }
                 }
-                test.innerHTML = pseudo2.value;
-                {
-                    setTimeout(() => {// appelle ma fonction avec un delai de 1sec  
-                        ia()
-                        gamer = "gamer 1"
-                        victoiryif()
-                    }, 1000); // delai toujours en milliseconde
-                }
+                victoiryif()
             }
 
         } else if (gamer === "gamer 2") {
@@ -93,11 +98,12 @@ function clickGame(element) {
             player = "O"
             test.innerHTML = pseudo.value;
             gamer = "gamer 1"
+            victoiryif()
         }
     }
 
     element.innerHTML = player
-    victoiryif()
+
 }
 
 //ia
@@ -143,6 +149,7 @@ function victoiryif() {
         stop()
         img.style.display = "block";
         audio.play();
+        checkWin = true
         return
     } else if (grille[0].innerHTML === "O" && grille[1].innerHTML === "O" && grille[2].innerHTML === "O" ||
         grille[3].innerHTML === "O" && grille[4].innerHTML === "O" && grille[5].innerHTML === "O" ||
@@ -160,6 +167,7 @@ function victoiryif() {
         stop()
         img.style.display = "block";
         audio.play();
+        checkWin = true
         return
     } else {
         matchnul()
@@ -175,6 +183,7 @@ function stop() {
 }
 //reset toute la grille
 function restart() {
+    checkWin = false
     for (var i = 0; i < grille.length; i++) {
         grille[i].innerHTML = "";
         grille[i].disabled = false;
@@ -198,7 +207,7 @@ function matchnul() {
         }
         return
     }
-    
+
 }
 function Aleatoire(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;

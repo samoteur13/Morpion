@@ -1,3 +1,11 @@
+@media screen and (max-width: 425px) {
+    
+    body{
+        font-family: sans-serif;
+    }
+
+}
+
 body {
     background: top;
     background-image: url(./img/force.jpg);
@@ -79,7 +87,6 @@ table tr td {
 }
 
 table button {
-    font-family: cursive;
     font-size: 70PX;
     margin: 0px;
     padding: 0px;
