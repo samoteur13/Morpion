@@ -1,4 +1,11 @@
 # Tic-Tac-Toe Project
+<div align='center'>
+
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![Boostrap](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white)
+</div>
 
 This project was completed as part of my training program. It's an implementation of the classic Tic-Tac-Toe game using HTML, CSS, and JavaScript. The game allows you to play against another player or against the computer, with the computer making random moves.
 
